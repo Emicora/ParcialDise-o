@@ -13,3 +13,9 @@ Para obtener estadísticas, selecciona el request GET en Postman para ver el nú
 
 
 Postman se ejecutara en esta URL: http://127.0.0.1:5000/
+
+## Como esta dockerizado y hosteado con render solo hace falta abrir postman y poner las siguientes url:
+### Para realizar el POST:
+https://parcialdise-o-1.onrender.com/mutant 
+### Para realizar el GET de las estadisticas:
+https://parcialdise-o-1.onrender.com/stats 
