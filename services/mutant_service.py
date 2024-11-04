@@ -13,9 +13,7 @@ class MutantService:
         for row in dna:
             if self._has_sequence(row):
                 sequences_found += 1
-                print(f"Secuencia encontrada en fila: {row}")
             if sequences_found > 1:
-                print("Más de una secuencia encontrada en filas. Es mutante.")
                 return True
 
         # Verificar columnas
@@ -23,9 +21,7 @@ class MutantService:
             column = ''.join([dna[row][col] for row in range(n)])  # Columna como string
             if self._has_sequence(column):
                 sequences_found += 1
-                print(f"Secuencia encontrada en columna: {column}")
             if sequences_found > 1:
-                print("Más de una secuencia encontrada en columnas. Es mutante.")
                 return True
 
         # Verificar diagonales de izquierda a derecha y de derecha a izquierda
@@ -34,16 +30,12 @@ class MutantService:
                 # Diagonal de izquierda a derecha
                 if dna[i][j] == dna[i + 1][j + 1] == dna[i + 2][j + 2] == dna[i + 3][j + 3]:
                     sequences_found += 1
-                    print(f"Secuencia encontrada en diagonal izquierda a derecha comenzando en ({i},{j})")
                 # Diagonal de derecha a izquierda
                 if dna[i][j + 3] == dna[i + 1][j + 2] == dna[i + 2][j + 1] == dna[i + 3][j]:
                     sequences_found += 1
-                    print(f"Secuencia encontrada en diagonal derecha a izquierda comenzando en ({i},{j + 3})")
                 if sequences_found > 1:
-                    print("Más de una secuencia encontrada en diagonales. Es mutante.")
                     return True
 
-        print("No se encontraron suficientes secuencias. No es mutante.")
         return False  # Si no se encontraron más de una secuencia, no es mutante
 
     def _has_sequence(self, sequence):
