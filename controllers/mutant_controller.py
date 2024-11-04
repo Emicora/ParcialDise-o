@@ -27,3 +27,6 @@ def get_stats():
     stats = mutant_service.get_stats()
     return jsonify(stats)
 
+@mutant_bp.route('/health', methods=['GET'])
+def health():
+    return jsonify({"status": "healthy"}), 200
