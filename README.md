@@ -3,7 +3,7 @@
 ### Paso 1
 Instala las dependencias requeridas ejecutando el siguiente comando en la terminal: pip install -r requirements.txt
 ### Paso 2
-Inicia el programa ejecutando el archivo principal con el siguiente comando: python app.py
+Inicia el programa ejecutando el archivo principal con el siguiente comando: python3 app.py
 ### Paso 3
 Abrir postman y abrir el archivo que se encuentra en la carpeta collection
 ### Paso 4
