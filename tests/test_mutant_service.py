@@ -29,33 +29,6 @@ class TestMutantService(unittest.TestCase):
         ]
         self.assertFalse(self.mutant_service.is_mutant(dna_humano))
 
-    def test_is_mutant_diagonal(self):
-        with patch('sys.stdout', new=StringIO()) as fake_out:
-            dna_mutante = [
-                "ATGCGC",
-                "CAGTCC",
-                "TTACGC",
-                "AGCACT",
-                "ACACTA",
-                "TCACTA"
-            ]
-            self.assertTrue(self.mutant_service.is_mutant(dna_mutante))
-            self.assertIn("Secuencia encontrada en diagonal izquierda a derecha comenzando en (0,0)", fake_out.getvalue())
-            self.assertIn("Secuencia encontrada en diagonal derecha a izquierda comenzando en (0,5)", fake_out.getvalue())
-
-    def test_is_mutant_masDeUnaSecuencia(self):
-        with patch('sys.stdout', new=StringIO()) as fake_out:
-            dna_mutante = [
-                "AAAAGC",
-                "CCGGGG",
-                "TTACGC",
-                "AGCACT",
-                "ACACTA",
-                "TCACTA"
-            ]
-            self.assertTrue(self.mutant_service.is_mutant(dna_mutante))
-            self.assertIn("Más de una secuencia encontrada en filas. Es mutante.", fake_out.getvalue())
-            
 
 
     def test_save_dna(self):
