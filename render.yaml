@@ -1,10 +1,13 @@
-version: 1
 services:
   
 type: web
-  name: your-service-name
-  env: python
-  buildCommand: "pip install -r requirements.txt"
-  startCommand: "python app.py"
-  healthCheckPath: "/health"  # Asegúrate de tener un endpoint de salud
-  autoDeploy: true
+  name: ParcialDS
+  env: docker
+  plan: free
+  buildCommand: ""
+  startCommand: ""
+  envVars:
+key: FLASK_ENV
+    value: production
+key: PORT
+  value: "5000"
